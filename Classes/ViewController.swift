@@ -1,5 +1,6 @@
 
 import UIKit
+import Photos
 
 class ViewController : BaseController {
     
@@ -26,29 +27,8 @@ class ViewController : BaseController {
         showToolbar([sp, item, sp])
     }
     
-    @objc func actionNext(sender : AnyObject) {
-        let sheet = ActionSheet.init(title: "How To?",
-                                     items: ["Push", "Modal", "Cancel"],
-                                     delegate: self,
-                                     cancelIndex: 2,
-                                     destructiveIndex: -1,
-                                     tag: 0,
-                                     direction: UIPopoverArrowDirection.Down)
-        sheet.showFromBarButton(sender)
-    }
-    
-    override func actionSheetSelected(tag:Int, buttonAtIndex:Int) {
-        Logger.d("actionSheetSelected tag \(tag), buttonAtIndex \(buttonAtIndex)");
-        
-        if(buttonAtIndex == 0){
-            let v = ViewController2.init()
-            self.navigationController?.pushViewController(v, animated: true)
-            
-        }else if(buttonAtIndex == 1){
-            let v = ViewController2.init()
-            v.createNavigationBar()
-            let n = UINavigationController.init(rootViewController: v)
-            self.presentViewController(n, animated: true, completion: nil)
-        }
+    @objc func actionNext(sender: AnyObject) {
+        let v = ViewController2.init()
+        self.navigationController?.pushViewController(v, animated: true)
     }
 }

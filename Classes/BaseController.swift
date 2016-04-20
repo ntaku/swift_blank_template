@@ -3,7 +3,7 @@ import UIKit
 import GoogleMobileAds
 
 
-class BaseController : GAITrackedViewController, ActionSheetDelegate {
+class BaseController : GAITrackedViewController {
     
     var toolbar : UIToolbar?
     var adBannerView : GADBannerView?
@@ -20,12 +20,10 @@ class BaseController : GAITrackedViewController, ActionSheetDelegate {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-//        Logger.d("init?(coder aDecoder: NSCoder)")
     }
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nil, bundle: nil)
-//        Logger.d("init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?)")
     }
 
     
@@ -132,15 +130,6 @@ class BaseController : GAITrackedViewController, ActionSheetDelegate {
     override func traitCollectionDidChange(previousTraitCollection: UITraitCollection?) {
     }
     
-
-    // -----------------------------------------------------------------------------
-    // MARK: - Delegate
-    // -----------------------------------------------------------------------------
-
-    
-    func actionSheetSelected(tag:Int, buttonAtIndex:Int) {
-    }
-
     
     // -----------------------------------------------------------------------------
     // MARK: - Ad Banner

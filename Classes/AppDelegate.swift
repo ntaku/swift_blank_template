@@ -62,9 +62,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     
     func application(application: UIApplication, supportedInterfaceOrientationsForWindow window: UIWindow?) -> UIInterfaceOrientationMask {
-        if(Device.isPad()){
-            return UIInterfaceOrientationMask.All
-        }
+//        if(Device.isPad()){
+//            return UIInterfaceOrientationMask.All
+//        }
         return UIInterfaceOrientationMask.Portrait
     }
     
