@@ -14,12 +14,12 @@ class ViewController2 : BaseController {
     
     func createNavigationBar() {
         self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(title: "閉じる",
-                                                                     style: UIBarButtonItemStyle.Plain,
+                                                                     style: UIBarButtonItemStyle.plain,
                                                                      target: self,
                                                                      action: #selector(actionClose))
     }
     
-    @objc private func actionClose() {
-        self.dismissViewControllerAnimated(true, completion: nil)
+    @objc fileprivate func actionClose() {
+        self.dismiss(animated: true, completion: nil)
     }
 }

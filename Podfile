@@ -1,11 +1,17 @@
-platform :ios, '8.0'
-xcodeproj './Plain.xcodeproj'
-use_frameworks!
+platform :ios, '9.0'
+swift_version = '3.0'
 
-pod 'GoogleAnalytics', '~> 3.14'
-pod 'GTMSessionFetcher', '~> 1.1'
-pod 'Flurry-iOS-SDK', '~> 7.6'
-pod 'SDWebImage', '~> 3.7'
-pod 'LUKeychainAccess', '~> 1.2'
-#pod 'RealmSwift', '~> 0.98'
-#pod 'FMDB', '~> 2.6'
+abstract_target :Common do
+  use_frameworks!
+
+  target :Plain do
+    pod 'Firebase/Core'
+    pod 'Firebase/AdMob'
+    pod 'SwiftEssential', :git => 'https://github.com/ntaku/SwiftEssential.git'
+    pod 'SwiftDate'
+    pod 'R.swift'
+    pod 'SDWebImage'
+    pod 'Alamofire'
+    pod 'LUKeychainAccess'
+  end
+end

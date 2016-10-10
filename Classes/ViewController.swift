@@ -14,20 +14,20 @@ class ViewController : BaseController {
         createToolbar()
     }
     
-    private func createToolbar() {
-        let sp = UIBarButtonItem.init(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace,
+    fileprivate func createToolbar() {
+        let sp = UIBarButtonItem.init(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace,
                                       target: nil,
                                       action: nil)
 
         let item = UIBarButtonItem.init(title: "Goto Next",
-                                        style: UIBarButtonItemStyle.Plain,
+                                        style: UIBarButtonItemStyle.plain,
                                         target: self,
                                         action: #selector(actionNext(_:)))
         
         showToolbar([sp, item, sp])
     }
     
-    @objc func actionNext(sender: AnyObject) {
+    @objc func actionNext(_ sender: AnyObject) {
         let v = ViewController2.init()
         self.navigationController?.pushViewController(v, animated: true)
     }
